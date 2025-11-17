@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Register - Bookworm Registry</title>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container" id="reg">
-        <h1>Register</h1>
 
-        <% if (errorMsg) { %>
-             <div style="background-color:#f8d7da;color:#721c24;padding:10px;margin-bottom:15px;border-radius:5px;">
-                 <%= errorMsg %>
-             </div>
-        <% } %>
-
-        <form action="/register" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Register</button>
+    <div class="login-container">
+        
+        <form action="/auth/register" method="POST" class="login-form">
+            
+            <h1 class="form-title">📚 Create Account</h1>
+            <p class="form-subtitle">Register to join the Registry</p>
+            
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-input" required autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-input" required>
+            </div>
+            
+            <button type="submit" class="cta-button">Register</button>
+            
+            <p class="form-footer">
+                Already have an account? <a href="/auth/login">Login here</a>
+            </p>
         </form>
-
-        <p style="margin-top: 15px;">
-            Already have an account? <a href="/login" class="link">Login here</a>
-        </p>
+        
     </div>
+
 </body>
 </html>
